@@ -2,9 +2,14 @@ import javax.swing.JOptionPane;
 
 public class gerenciamentomenu {
     public static void main(String[] args) throws Exception {
-        int opcao;
+        int[] numero = new int[4];
+        int i,opcao;
         String entrada;
-        receberNumeros();
+
+        for( i = 0; i < numero.length; i++) {
+			entrada = JOptionPane.showInputDialog("Informe o número " + (i + 1) + ":");
+			numero[i] = Integer.parseInt(entrada);
+        }
         do{
             entrada = JOptionPane.showInputDialog("DIGITE A OPCAO\n"+
             "1. Mostrar\n"+
@@ -16,7 +21,7 @@ public class gerenciamentomenu {
             "7. Sair\n");
             opcao = Integer.parseInt(entrada);
             switch (opcao){
-                case 1: //function para apresentar o menu
+                case 1: mostrarLista(numero);
                 break;
                 case 2: //function para inverter a ordem
                 break;
@@ -35,13 +40,12 @@ public class gerenciamentomenu {
             }
             }while(opcao != 7);
     }
-    static void receberNumeros(){
-        int[] numero = new int[4];
+    static void mostrarLista(int []numero){
         int i;
-        String entrada;
-        for( i = 0; i < numero.length; i++) {
-            entrada = JOptionPane.showInputDialog("Informe o número " + (i + 1) + ":");
-            numero[i] = Integer.parseInt(entrada);
+        System.out.println("--- MOSTRAR NÚMEROS ---");
+        for(i = 0; i < numero.length; i++){
+            System.out.println("Número na posição " + i + ": " + numero[i]);
         }
+        return;
     }
 }
