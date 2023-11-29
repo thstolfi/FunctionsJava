@@ -23,7 +23,7 @@ public class gerenciamentomenu {
             switch (opcao){
                 case 1: mostrarLista(numero);
                         break;
-                case 2: //function para inverter a ordem
+                case 2: inverterLista(numero);
                         break;
                 case 3: ordemCrescente(numero);
                         break;
@@ -47,6 +47,23 @@ public class gerenciamentomenu {
             System.out.println("Número na posição " + i + ": " + numero[i]);
         }
         return;
+    }
+    static void inverterLista(int []numero){
+        // Funcao para inverter dados do array
+        int esq,dir,i,aux;
+            esq = 0;
+            dir = numero.length - 1;
+            while(esq < dir){
+                aux = numero[esq];
+                numero[esq] = numero[dir];
+                numero[dir] = aux;
+                esq++;
+                dir--;
+            }
+        System.out.println("--- NÚMEROS INVERSOS DA ÚLTIMA ORDEM ---");
+        for(i = 0; i < numero.length; i++){
+            System.out.println("Número na posição " + i + ": numero: " + numero[i]);
+        } 
     }
     static void ordemCrescente(int []numero){
         int i,j,aux;
