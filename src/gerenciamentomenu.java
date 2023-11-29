@@ -27,7 +27,7 @@ public class gerenciamentomenu {
                         break;
                 case 3: ordemCrescente(numero);
                         break;
-                case 4: //function para ordenar em ordem decrescente
+                case 4: ordemDecrescente(numero);
                         break;
                 case 5: //function para monstrar o fatorial do menor elemento
                         break;
@@ -69,6 +69,31 @@ public class gerenciamentomenu {
             }
         }
         System.out.println("--- NÚMEROS EM ORDEM CRESCENTE ---");
+        for(i = 0; i < numero.length; i++){
+            System.out.println("Número na posição " + i + ": numero: " + numero[i]);
+        }
+    }
+    static void ordemDecrescente(int []numero){
+        int i,j,aux;
+        boolean verificar;
+        for(i = 0; i < numero.length; i++){
+            verificar = true;
+            // Loop para trocar os números para ordem crescente
+            for(j = 0; j < (numero.length - 1); j++){
+                // Tip: Alterando o ">" no if para "<" invertemos para ordem decrescente
+                if(numero[j] < numero[j + 1]){
+                    aux = numero[j];
+                    numero[j] = numero[j + 1];
+                    numero[j + 1] = aux;
+                    verificar = false;
+                }
+            }
+            // Boolean para verificar se os números já estão em ordem
+            if(verificar){
+                break;
+            }
+        }
+        System.out.println("--- NÚMEROS EM ORDEM DECRESCENTE ---");
         for(i = 0; i < numero.length; i++){
             System.out.println("Número na posição " + i + ": numero: " + numero[i]);
         }
