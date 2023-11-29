@@ -6,7 +6,7 @@ public class gerenciamentomenu {
         int i,opcao;
         String entrada;
 
-        for( i = 0; i < numero.length; i++) {
+        for(i = 0; i < numero.length; i++) {
 			entrada = JOptionPane.showInputDialog("Informe o número " + (i + 1) + ":");
 			numero[i] = Integer.parseInt(entrada);
         }
@@ -22,20 +22,20 @@ public class gerenciamentomenu {
             opcao = Integer.parseInt(entrada);
             switch (opcao){
                 case 1: mostrarLista(numero);
-                break;
+                        break;
                 case 2: //function para inverter a ordem
-                break;
-                case 3: //function para ordenar em ordem crescente
-                break;
+                        break;
+                case 3: ordemCrescente(numero);
+                        break;
                 case 4: //function para ordenar em ordem decrescente
-                break;
+                        break;
                 case 5: //function para monstrar o fatorial do menor elemento
-                break;
+                        break;
                 case 6: //function para mostrar quantos primos existem na coleção
-                break;
+                        break;
                 case 7: 
                 System.out.println("Saindo do programa...");
-                break;
+                        break;
                 default: System.out.println("OPCAO INVALIDA");
             }
             }while(opcao != 7);
@@ -47,5 +47,30 @@ public class gerenciamentomenu {
             System.out.println("Número na posição " + i + ": " + numero[i]);
         }
         return;
+    }
+    static void ordemCrescente(int []numero){
+        int i,j,aux;
+        boolean verificar;
+        for(i = 0; i < numero.length; i++){
+            verificar = true;
+            // Loop para trocar os números para ordem crescente
+            for(j = 0; j < (numero.length - 1); j++){
+                // Tip: Alterando o ">" no if para "<" invertemos para ordem decrescente
+                if(numero[j] > numero[j + 1]){
+                    aux = numero[j];
+                    numero[j] = numero[j + 1];
+                    numero[j + 1] = aux;
+                    verificar = false;
+                }
+            }
+            // Boolean para verificar se os números já estão em ordem
+            if(verificar){
+                break;
+            }
+        }
+        System.out.println("--- NÚMEROS EM ORDEM CRESCENTE ---");
+        for(i = 0; i < numero.length; i++){
+            System.out.println("Número na posição " + i + ": numero: " + numero[i]);
+        }
     }
 }
