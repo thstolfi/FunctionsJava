@@ -3,7 +3,7 @@ import javax.swing.JOptionPane;
 public class gerenciamentomenu {
     public static void main(String[] args) throws Exception {
         int[] numero = new int[4];
-        int i,opcao;
+        int i,opcao,menor;
         String entrada;
 
         for(i = 0; i < numero.length; i++) {
@@ -29,7 +29,8 @@ public class gerenciamentomenu {
                         break;
                 case 4: ordemDecrescente(numero);
                         break;
-                case 5: //function para monstrar o fatorial do menor elemento
+                case 5: menor = menorNumero(numero);
+                        System.out.println(menor);
                         break;
                 case 6: //function para mostrar quantos primos existem na coleção
                         break;
@@ -114,5 +115,15 @@ public class gerenciamentomenu {
         for(i = 0; i < numero.length; i++){
             System.out.println("Número na posição " + i + ": numero: " + numero[i]);
         }
+    }
+    static int menorNumero(int []numero){
+        int i;
+        int menor = numero[0];
+        for(i = 0; i < numero.length; i++){
+            if(numero[i] < menor){
+                menor = numero[i];
+            }
+        }
+        return menor;
     }
 }
