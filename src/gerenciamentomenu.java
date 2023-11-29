@@ -30,7 +30,7 @@ public class gerenciamentomenu {
                 case 4: ordemDecrescente(numero);
                         break;
                 case 5: menor = menorNumero(numero);
-                        System.out.println(menor);
+                        fatorialMenor(menor);
                         break;
                 case 6: //function para mostrar quantos primos existem na coleção
                         break;
@@ -124,6 +124,15 @@ public class gerenciamentomenu {
                 menor = numero[i];
             }
         }
+        System.out.println("Menor número: " + menor);
         return menor;
+    }
+    static void fatorialMenor(int menor){
+        int fatorial = 1;
+        int i;
+        for(i = 1; i <= menor; i++){
+            fatorial *= i;
+        }       
+        System.out.println("Fatorial do menor número: " + fatorial);
     }
 }
