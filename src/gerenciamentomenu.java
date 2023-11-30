@@ -71,7 +71,7 @@ public class gerenciamentomenu {
     }
     static void inverterLista(int []numero){
         // Funcao para inverter dados do array
-        int esq,dir,i,aux;
+        int esq,dir,aux;
             esq = 0;
             dir = numero.length - 1;
             while(esq < dir){
