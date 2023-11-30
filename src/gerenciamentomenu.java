@@ -24,13 +24,27 @@ public class gerenciamentomenu {
                 case 1: mostrarLista(numero);
                         break;
                 case 2: inverterLista(numero);
+                        System.out.println("--- NÚMEROS INVERSOS DA ÚLTIMA ORDEM ---");
+                        for(i = 0; i < numero.length; i++){
+                            System.out.println("Número na posição " + i + ": numero: " + numero[i]);
+                        } 
                         break;
                 case 3: ordemCrescente(numero);
+                        System.out.println("--- NÚMEROS EM ORDEM CRESCENTE ---");
+                        for(i = 0; i < numero.length; i++){
+                            System.out.println("Número na posição " + i + ": numero: " + numero[i]);
+                        }
                         break;
                 case 4: ordemDecrescente(numero);
+                        System.out.println("--- NÚMEROS EM ORDEM DECRESCENTE ---");
+                        for(i = 0; i < numero.length; i++){
+                            System.out.println("Número na posição " + i + ": numero: " + numero[i]);
+                        }
                         break;
                 case 5: menor = menorNumero(numero);
-                        fatorialMenor(menor);
+                        System.out.println("Menor número: " + menor);
+                        int fatorialResultado = fatorialMenor(menor);
+                        System.out.println("Fatorial do menor número: " + fatorialResultado);
                         break;
                 case 6: int qtdprimos = 0;
                         for(i = 0; i < numero.length; i++){
@@ -67,10 +81,6 @@ public class gerenciamentomenu {
                 esq++;
                 dir--;
             }
-        System.out.println("--- NÚMEROS INVERSOS DA ÚLTIMA ORDEM ---");
-        for(i = 0; i < numero.length; i++){
-            System.out.println("Número na posição " + i + ": numero: " + numero[i]);
-        } 
     }
     static void ordemCrescente(int []numero){
         int i,j,aux;
@@ -92,10 +102,7 @@ public class gerenciamentomenu {
                 break;
             }
         }
-        System.out.println("--- NÚMEROS EM ORDEM CRESCENTE ---");
-        for(i = 0; i < numero.length; i++){
-            System.out.println("Número na posição " + i + ": numero: " + numero[i]);
-        }
+        
     }
     static void ordemDecrescente(int []numero){
         int i,j,aux;
@@ -117,10 +124,6 @@ public class gerenciamentomenu {
                 break;
             }
         }
-        System.out.println("--- NÚMEROS EM ORDEM DECRESCENTE ---");
-        for(i = 0; i < numero.length; i++){
-            System.out.println("Número na posição " + i + ": numero: " + numero[i]);
-        }
     }
     static int menorNumero(int []numero){
         int i;
@@ -130,16 +133,14 @@ public class gerenciamentomenu {
                 menor = numero[i];
             }
         }
-        System.out.println("Menor número: " + menor);
         return menor;
     }
-    static void fatorialMenor(int menor){
+    static int fatorialMenor(int menor){
         int fatorial = 1;
-        int i;
-        for(i = 1; i <= menor; i++){
+        for(int i = 1; i <= menor; i++){
             fatorial *= i;
         }       
-        System.out.println("Fatorial do menor número: " + fatorial);
+        return fatorial;
     }
     static boolean verificarPrimo(int numero){
         if (numero <= 1) {
@@ -151,7 +152,6 @@ public class gerenciamentomenu {
                 return false;
             }
         }
-
         return true;
     }
 }
