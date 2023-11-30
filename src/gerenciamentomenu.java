@@ -2,7 +2,7 @@ import javax.swing.JOptionPane;
 
 public class gerenciamentomenu {
     public static void main(String[] args) throws Exception {
-        int[] numero = new int[4];
+        int[] numero = new int[10];
         int i,opcao,menor;
         String entrada;
 
