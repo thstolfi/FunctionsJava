@@ -32,7 +32,13 @@ public class gerenciamentomenu {
                 case 5: menor = menorNumero(numero);
                         fatorialMenor(menor);
                         break;
-                case 6: //function para mostrar quantos primos existem na coleção
+                case 6: int qtdprimos = 0;
+                        for(i = 0; i < numero.length; i++){
+                            if(verificarPrimo(numero[i])){
+                                qtdprimos++;
+                            }
+                        }
+                        System.out.println("Quantidade de números primos no array: " + qtdprimos);
                         break;
                 case 7: 
                 System.out.println("Saindo do programa...");
@@ -134,5 +140,18 @@ public class gerenciamentomenu {
             fatorial *= i;
         }       
         System.out.println("Fatorial do menor número: " + fatorial);
+    }
+    static boolean verificarPrimo(int numero){
+        if (numero <= 1) {
+            return false;
+        }
+
+        for (int i = 2; i <= Math.sqrt(numero); i++) {
+            if (numero % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
